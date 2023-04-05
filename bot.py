@@ -35,7 +35,7 @@ async def start(message: types.Message):
     await bot.send_message(message.chat.id, "Добро пожаловать в бота ЧатБот Ержан\nПросто напиши мне, пообщаемся)\n(Основано на запросах куда то далекооооо далеко)")
     
 @dp.message_handler(content_types=["text"])
-@dp.throttled(anti_flood,rate=1)
+@dp.throttled(anti_flood,rate=1) #Тут я указал время которое смогу прожить без Ани. Да это ровно 1 секунд.
 async def get_text(message):
     chat_id = message.chat.id
     msg = await bot.send_message(chat_id, "Думаю...\n\nРазработчик @CTOHKC")
